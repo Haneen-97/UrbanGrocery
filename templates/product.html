@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+       {% for product in fresh %}
+    <title>Urban Grocery | {{product.category}}</title> <link rel="icon" type="image/gif/png" href="{{ url_for('static',filename='img/minilogo.png') }}">
+{% endfor %}
+
+    <!-- Font awesome -->
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       <link href="css/font-awesome.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}" />
+		<script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}" />
+		<script src= "{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+      		<script src= "{{ url_for('static',filename='js/main.js') }}"></script>
+            		<script src= "{{ url_for('static',filename='js/custom.js') }}"></script>
+
+
+    <link href= "{{ url_for('static',filename='css/bootstrap.css') }}" rel="stylesheet">   
+    <link href="{{ url_for('static',filename='css/jquery.smartmenus.bootstrap.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/jquery.simpleLens.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/slick.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/nouislider.css') }}">
+    <link id="switcher" href="{{ url_for('static',filename='css/theme-color/default-theme.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='css/sequence-theme.modern-slide-in.css') }}" rel="stylesheet" media="all">
+    <link href="{{ url_for('static',filename='css/style.css') }}" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+  </head>
+  <!-- !Important notice -->
+  <!-- Only for product page body tag have to added .productPage class -->
+  <body class="productPage">  
+  <div id="wpf-loader-two">          
+      <div class="wpf-loader-two-inner">
+        <span>Loading</span>
+      </div>
+    </div> 
+    <!-- / wpf loader Two -->       
+  <!-- SCROLL TOP BUTTON -->
+    <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
+        
+      <header id="aa-header">
+    <!-- start header top  -->
+    <div class="aa-header-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="aa-header-top-area">
+              <!-- start header top left -->
+              <div class="aa-header-top-left">
+                <!-- start language -->
+                <div class="aa-language">
+                  <div class="dropdown">
+                    <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                      <img src="{{ url_for('static',filename='img/flag/english.jpg') }}" alt="english flag">ENGLISH
+                      <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                      <li><a href="#"><img src="{{ url_for('static',filename='img/flag/french.jpg') }}" alt="">FRENCH</a></li>
+                      <li><a href="#"><img src="{{ url_for('static',filename='img/flag/english.jpg') }}" alt="">ENGLISH</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- / language -->
+
+                <!-- start currency -->
+                <div class="aa-currency">
+                  <div class="dropdown">
+                    <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <i class="fa fa-usd"></i>USD
+                      <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                      <li><a href="#"><i class="fa fa-usd"></i>USD</a></li>
+                      <li><a href="#">&#65020;  SAUDI RIYAL</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- / currency -->
+                <!-- start cellphone -->
+                <div class="cellphone hidden-xs">
+                  <p><span class="fa fa-phone"></span>00-62-658-658</p>
+                </div>
+                <!-- / cellphone -->
+              </div>
+              <!-- / header top left -->
+              <div class="aa-header-top-right">
+                <ul class="aa-head-top-nav-right">
+                  <li class="hidden-xs"><a href="{{url_for('checkout')}}">Checkout</a></li>
+                  <li><a href="" data-toggle="modal" data-target="#login-Admin-modal">Admin Login</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / header top  -->
+
+    <!-- start header bottom  -->
+    <div class="aa-header-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="aa-header-bottom-area">
+              <!-- logo  -->
+              <div class="aa-logo">
+		      <a href="homepage.php"><img src="{{ url_for('static',filename='img/logo.png') }}" alt="logo img" height="100"></a>
+              </div>
+              <!-- / logo  -->
+               <!-- cart box -->
+             
+              <div class="aa-cartbox">
+                <a class="aa-cart-link" href="{{url_for('checkout')}}">
+                  <span class="fa fa-shopping-basket"></span>
+                    
+                  <span class="aa-cart-title">SHOPPING CART</span>
+               
+                <span class='aa-cart-notify'>{{session['cart_item']|length}}</span></a>
+    
+              <div class='aa-cartbox-summary'>
+				<span id="cart_details"></span>
+                  
+                  <a class="aa-cartbox-checkout aa-primary-btn" href="{{url_for('checkout')}}">Checkout</a>
+                </div>
+                </div>
+           
+                      
+              <!-- / cart box -->
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+<section id="menu">
+    <div class="container">
+      <div class="menu-area">
+        <!-- Navbar -->
+        <div class="navbar navbar-default" role="navigation">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div id="category" class="navbar-collapse collapse">
+            <!-- Left nav -->
+ <div class="navbar-collapse collapse">
+       <ul class="nav navbar-nav">
+              <li><a href="#" >Home</a></li>
+           <li><a href="{{url_for('fresh')}}" >Fresh</a></li>
+           <li><a href="{{url_for('food')}}" >Food & beverages</a></li>
+           <li><a href="{{url_for('organic')}}" >Organic</a></li>
+              <li><a href="{{url_for('contact')}}">Contact</a></li>
+
+            </ul>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+        
+        
+<div class="modal fade" id="login-Admin-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">                      
+        <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4>Login </h4>
+          <form class="aa-login-form" action="{{url_for('AdminLogin')}}" method="POST">
+            <h4 color="red">{{msg}}</h4>
+            <label for="">Username or Email address<span>*</span></label>
+            <input type="text" name="user" placeholder="Username or email" value="">
+            <label for="">Password<span>*</span></label>
+            <input type="password" name="pass"  placeholder="Password" value="">
+
+            <button class="aa-browse-btn" type="submit" name="login" >Login</button>
+                <label  class="rememberme">
+            <input type="checkbox"  name="remember" value="checked"> Remember me </label>
+
+<!--      -->
+          <h4 class="flash">
+             {{message}}
+          </h4>
+
+</form>
+
+
+       </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div>
+
+   <!-- wpf loader Two -->
+   
+  <!-- END SCROLL TOP BUTTON -->
+
+
+      
+ 
+  <!-- catg header banner section -->
+  <section id="aa-catg-head-banner">
+   <img src="{{ url_for('static',filename='img/header2.png') }}" alt="header img">
+   <div class="aa-catg-head-banner-area">
+     <div class="container">
+      <div class="aa-catg-head-banner-content">
+        <h2>Urban Grocery</h2>
+        <ol class="breadcrumb">
+          <li><a href="homepage.php">Home</a></li>         
+          <li class="active"> products</li>
+        </ol>
+      </div>
+     </div>
+   </div>
+  </section>
+  <!-- / catg header banner section -->
+     
+  <!-- product category -->
+  <section id="aa-product-category">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9 col-md-9 col-sm-8 col-md-push-3">
+          <div class="aa-product-catg-content">
+            <div class="aa-product-catg-head">
+              <div class="aa-product-catg-head-left">
+                
+              </div>
+              <div class="aa-product-catg-head-right">
+                <a id="grid-catg" href="#"><span class="fa fa-th"></span></a>
+                <a id="list-catg" href="#"><span class="fa fa-list"></span></a>
+              </div>
+            </div>
+            <div id="getProduct" class="aa-product-catg-body">
+                 
+            </div>
+           
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-md-pull-9">
+          <aside class="aa-sidebar">
+            <!-- single sidebar -->
+            <div class="aa-sidebar-widget">
+              <h3>Category</h3>
+              <ul class="aa-catg-nav">
+
+                <li><a class='category' cid="Fresh" href="{{url_for('fresh')}}">Fresh</a></li>
+                <li><a class='category' cid="FoodBeverages" href="{{url_for('food')}}">Food &amp; Beverages</a></li>
+                <li><a class='category' cid="OrganicFood" href="{{url_for('organic')}}">Organic Food</a></li>
+              </ul>              
+
+            </div>
+           
+            
+          </aside>
+        </div>
+       
+      </div>
+    </div>
+  </section>
+  <!-- / product category -->
+ <section id="aa-product-category">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9 col-md-9 col-sm-8 col-md-push-3">
+          <div class="aa-product-catg-content">
+      <div class="aa-product-catg-body">
+          <ul class="aa-product-catg">
+              {% for product in fresh %}
+<form action="{{url_for('addCart')}}" method="post">
+                <li>
+                  <figure>
+                <a class="aa-product-img"  href="{{url_for('details',id=product.id)}}" >
+                  <img src="static/img/{{product.pic}}"  width="250" height="300"></a>
+                <button type="submit"  style="width:260px; border:none;" name="add_to_cart" id="{{product.id}}" class="aa-add-card-btn add_to_cart" onclick="displayCount()">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+                <figcaption>
+                <h4 class="aa-product-title"><a href="{{url_for('details',id=product.id)}}"> {{product.name}}</a></h4>
+                <span class="aa-product-price">${{product.price}}</span>
+             <p class="aa-product-descrip">{{product.Description}}</p>
+           <input type="hidden" name="quantity" id="quantity{{product.id}}" class="form-control" value="1">
+
+            <input type="hidden" name="id" value="{{product.id}}">
+
+            
+
+
+            </figcaption>
+                  </figure>                         
+                  
+                </li>
+    </form>
+
+            {% endfor %}
+              </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+          </div>
+      </section>
+
+
+
+    
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="{{ url_for('static',filename='js/bootstrap.js') }}"></script>  
+  <!-- SmartMenus jQuery plugin -->
+  <script type="text/javascript" src="{{ url_for('static',filename='js/jquery.smartmenus.js') }}"></script>
+  <!-- SmartMenus jQuery Bootstrap Addon -->
+  <script type="text/javascript" src="{{ url_for('static',filename='js/jquery.smartmenus.bootstrap.js') }}"></script>  
+  <!-- To Slider JS -->
+  <script src="{{ url_for('static',filename='js/sequence.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/sequence-theme.modern-slide-in.js') }}"></script>  
+  <!-- Product view slider -->
+  <script type="text/javascript" src="{{ url_for('static',filename='js/jquery.simpleGallery.js') }}"></script>
+
+  <script type="text/javascript" src="{{ url_for('static',filename='js/jquery.simpleLens.js') }}"></script>
+  <!-- slick slider -->
+  <script type="text/javascript" src="{{ url_for('static',filename='js/slick.js') }}"></script>
+  <!-- Price picker slider -->
+  <script type="text/javascript" src="{{ url_for('static',filename='js/nouislider.js') }}"></script>
+  <!-- Custom js -->
+  <script src="{{ url_for('static',filename='js/custom.js') }}"></script> 
+  
+
+  </body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <title>Urban Grocery| Edit Products Page</title> <link rel="icon" type="image/gif/png" href="{{ url_for('static',filename='img/minilogo.png') }}">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+    <!-- Font awesome -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/sweetalert2.css" rel="stylesheet">
+   <link href="css/sweetalert2.min.css" rel="stylesheet">
+        <script src="css/sweetalert2.min.js"></script>
+
+  <script src="js/edit.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="{{ url_for('static',filename='css/bootstrap.css') }}" rel="stylesheet">   
+    <!-- SmartMenus jQuery Bootstrap Addon CSS -->
+    <link href="{{ url_for('static',filename='css/jquery.smartmenus.bootstrap.css') }}" rel="stylesheet">
+    <!-- Product view slider -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/jquery.simpleLens.css') }}">    
+    <!-- slick slider -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/slick.css') }}">
+    <!-- price picker slider -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/nouislider.css') }}">
+    <!-- Theme color -->
+    <link id="switcher" href="{{ url_for('static',filename='css/theme-color/default-theme.css') }}" rel="stylesheet">
+    <!-- Top Slider CSS -->
+    <link href="{{ url_for('static',filename='css/sequence-theme.modern-slide-in.css') }}" rel="stylesheet" media="all">
+
+    <!-- Main style sheet -->
+    <link href="{{ url_for('static',filename='css/style.css') }}" rel="stylesheet">    
+
+    <!-- Google Font -->
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <script src="sweetalert2.all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+    <style>
+     @import url(https://fonts.googleapis.com/css?family=Oswald:400);
+
+.navigation33 {
+  width: 100%;
+  background-color:  #F96B3A;
+}
+
+.rana {
+  width: 40px;
+  border-radius: 50px;
+  float: left;
+}
+
+.logout33 {
+  font-size: .8em;
+  font-family: 'Oswald', sans-serif;
+   position: relative;
+  right: -3px;
+  bottom: -10px;
+  overflow: hidden;
+  letter-spacing: 3px;
+  opacity: 0;
+  transition: opacity .45s;
+  -webkit-transition: opacity .35s;
+
+}
+
+.button33 {
+    text-decoration: none;
+   float: right;
+  padding: 1px;
+  margin: 1px;
+  color: white;
+  width: 60px;
+  background-color: white;
+  transition: width .35s;
+  -webkit-transition: width .35s;
+  overflow: hidden
+}
+
+#hhh:hover {
+  width: 100px;
+}
+
+#hhh:hover .logout33{
+  opacity: .9;
+    color:  #F96B3A;
+}
+
+#hhh  {
+  text-decoration: none;
+}
+
+        </style>
+
+
+  </head>
+  <body class="productPage">
+         <div id="wpf-loader-two">
+        <div class="wpf-loader-two-inner">
+          <span>Loading</span>
+        </div>
+      </div>
+      <!-- / wpf loader Two -->
+   <!-- SCROLL TOP BUTTON -->
+      <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
+    <!-- END SCROLL TOP BUTTON -->
+
+         <header id="aa-header">
+    <!-- start header top  -->
+    <div class="aa-header-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="aa-header-top-area">
+              <!-- start header top left -->
+              <div class="aa-header-top-left">
+                <!-- start language -->
+                <div class="aa-language">
+                  <div class="dropdown">
+                    <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                      <img src="{{ url_for('static',filename='img/flag/english.jpg') }}" alt="english flag">ENGLISH
+                      <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                      <li><a href="#"><img src="{{ url_for('static',filename='img/flag/french.jpg') }}" alt="">FRENCH</a></li>
+                      <li><a href="#"><img src="{{ url_for('static',filename='img/flag/english.jpg') }}" alt="">ENGLISH</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- / language -->
+
+                <!-- start currency -->
+                <div class="aa-currency">
+                  <div class="dropdown">
+                    <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <i class="fa fa-usd"></i>USD
+                      <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                      <li><a href="#"><i class="fa fa-usd"></i>USD</a></li>
+                      <li><a href="#">&#65020;  SAUDI RIYAL</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- / currency -->
+                <!-- start cellphone -->
+                <div class="cellphone hidden-xs">
+                  <p><span class="fa fa-phone"></span>00-62-658-658</p>
+                </div>
+                <!-- / cellphone -->
+              </div>
+              <!-- / header top left -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- / header top  -->
+
+    <!-- start header bottom  -->
+    <div class="aa-header-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="aa-header-bottom-area">
+              <!-- logo  -->
+                    <div class="aa-logo">
+		<a href="{{url_for('home')}}"><img src="{{ url_for('static',filename='img/logo.png') }}" alt="logo img" height="100"></a>
+              </div>
+              <!-- / logo  -->
+                         <div class="navigation33">
+
+	<a id="hhh" class="button33" href="{{url_for('logout')}}">
+  	<img src="https://pbs.twimg.com/profile_images/378800000639740507/fc0aaad744734cd1dbc8aeb3d51f8729_400x400.jpeg" class="rana">
+
+  <div class="logout33">LOGOUT</div>
+
+	</a>
+
+</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / header bottom  -->
+  </header>
+  <!-- / header section -->
+  <!-- menu -->
+  <section id="menu">
+    <div class="container">
+      <div class="menu-area">
+        <!-- Navbar -->
+        <div class="navbar navbar-default" role="navigation">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="navbar-collapse collapse">
+            <!-- Left nav -->
+            <ul class="nav navbar-nav">
+              <li><a href="{{url_for('admin')}}">Admin Homepage <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{url_for('addP')}}">Add Products</a></li>
+
+                </ul>
+              </li>
+
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+  </section>
+     <!-- wpf loader Two -->
+
+
+
+  <!-- catg header banner section -->
+  <section id="aa-catg-head-banner">
+   <img src="{{ url_for('static',filename='img/header2.png')}}" alt="header img">
+   <div class="aa-catg-head-banner-area">
+     <div class="container">
+      <div class="aa-catg-head-banner-content">
+        <h2>Edit Products </h2>
+        <ol class="breadcrumb">
+          <li><a href="AdminHomepage.html">Prodcuts Center</a></li>
+
+        <li class="active">Edit Products </li>
+        </ol>
+      </div>
+     </div>
+   </div>
+  </section>
+  <!-- / catg header banner section -->
+
+ <!-- Cart view section -->
+ <section id="cart-view">
+   <div class="container">
+     <div class="row">
+       <div class="col-md-12">
+         <div class="cart-view-area">
+           <div class="cart-view-table aa-wishlist-table">
+               <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Id</th>
+                        <th>picture</th>
+                        <th>Product</th>
+                        <th>Price</th>
+
+                        <th>Quantity</th>
+                      <th>Description</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                      <tr>
+                            {% for product in products %}
+                            <form action="{{url_for('editP', id=product.id)}}" method="post">
+                        <td> {{product.id}}</td>
+                        <td><a name=pict href="#"><img id="image1" src= "{{ url_for('static',filename='img/'+product.pic) }}" ></a><br>
+                            <input  type="file" name="pimage" onchange="return fileValidation()"   id="image"></td>
+                        <td><a class="aa-cart-title" ><input id="name" name="name" type="text" value="{{product.name}}" style=" background-color:#F5F5F5;border: none;"></a></td>
+                        <td><input name="price" type="text" id="price" value="{{product.price}}" style=" background-color:#F5F5F5;border: none;" onkeypress="javascript:return isNumber(event)"></td>
+
+                  <td><input id="q" name="quantity" type="number" min="1" max="30" value="{{product.NO_item}}" style=" background-color:#F5F5F5;border: none;"></td>
+                        <td><textarea id="diss" name="description" rows="4" cols="23" style=" background-color:#F5F5F5;border: none;">{{product.Description}}
+                            </textarea></td>
+                          <td><button class="aa-add-to-cart-btn" type= "submit" id="edit" name="edit">EDIT</button></td>
+                      </tr>
+                    </form>
+
+                    {% endfor %}
+                      </tbody>
+                  </table>
+                </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+</section>
+<script>
+  function isNumber(evt) {
+        var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+        if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+            return false;
+
+        return true;
+    }
+function fileValidation(){
+    var fileInput = document.getElementById('image');
+    var filePath = fileInput.value;
+    var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+    if(!allowedExtensions.exec(filePath)){
+                     Swal.fire('Invalid Image File');
+        fileInput.value = '';
+        return false;
+    }else{
+        //Image preview
+        var reader = new FileReader();
+    reader.onload = function()
+    {
+      var output = document.getElementById('image1');
+      output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+
+    }
+}
+    $(document).ready(function() {
+  $('#myForm').on('input change', function() {
+    $('#edit').attr('disabled', false);
+  });
+})
+
+    </script>
+
+
+
+
+
+
+  <!-- jQuery library -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="{{ url_for('static',filename='js/bootstrap.js') }}"></script>
+  <!-- SmartMenus jQuery plugin -->
+  <script type="text/javascript" src="{{ url_for('static',filename='js/jquery.smartmenus.js') }}"></script>
+  <!-- SmartMenus jQuery Bootstrap Addon -->
+  <script type="text/javascript" src="{{ url_for('static',filename='js/jquery.smartmenus.bootstrap.js') }}"></script>
+  <!-- To Slider JS -->
+  <script src="{{ url_for('static',filename='js/sequence.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/sequence-theme.modern-slide-in.js') }}"></script>
+  <!-- Product view slider -->
+  <script type="text/javascript" src="{{ url_for('static',filename='js/jquery.simpleGallery.js') }}"></script>
+
+  <script type="text/javascript" src="{{ url_for('static',filename='js/jquery.simpleLens.js') }}"></script>
+  <!-- slick slider -->
+  <script type="text/javascript" src="{{ url_for('static',filename='js/slick.js') }}"></script>
+  <!-- Price picker slider -->
+  <script type="text/javascript" src="{{ url_for('static',filename='js/nouislider.js') }}"></script>
+  <!-- Custom js -->
+  <script src="{{ url_for('static',filename='js/custom.js') }}"></script>
+
+
+
+
+
+
+  </body>
+</html>
+
