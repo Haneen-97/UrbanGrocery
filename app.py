@@ -13,10 +13,10 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)
 # Config MySQL
 mysql = MySQL()
-app.config['MYSQL_HOST'] = '127.0.0.1'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = '1234'
-app.config['MYSQL_DB'] = 'project3'
+app.config['MYSQL_HOST'] = '-Your Host-'
+app.config['MYSQL_USER'] = '-Your User-'
+app.config['MYSQL_PASSWORD'] = '-Your Password-'
+app.config['MYSQL_DB'] = '-Your DB Name-'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 mysql.init_app(app)
 
